@@ -26,11 +26,11 @@ var pizzaCollection *mongo.Collection
 
 // Pizza model
 type Pizza struct {
-	ID       primitive.ObjectID bson:"_id,omitempty" json:"id,omitempty"
-	Name     string             json:"name" bson:"pizza_name"
-	Size     int                json:"size" bson:"size"
-	Price    float64            json:"price" bson:"price"
-	Category string             json:"category" bson:"category"
+	ID       primitive.ObjectID `bson:"_id,omitempty" json:"id,omitempty"`
+	Name     string             `json:"name" bson:"pizza_name"`
+	Size     int                `json:"size" bson:"size"`
+	Price    float64            `json:"price" bson:"price"`
+	Category string             `json:"category" bson:"category"`
 }
 
 

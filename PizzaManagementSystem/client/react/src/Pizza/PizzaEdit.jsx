@@ -18,7 +18,7 @@ function PizzaEdit() {
     const readById = async () => {
         const baseUrl = "http://localhost:8080";
         try {
-            const response = await axios.get(${baseUrl}/pizzas/${params.id});
+            const response = await axios.get(`${baseUrl}/pizzas/${params.id}`);
             setPizza(response.data); // Assuming API returns the correct format
         } catch (error) {
             alert("Server Error: Unable to fetch pizza details");
@@ -28,7 +28,7 @@ function PizzaEdit() {
     const updatePizza = async () => {
         const baseUrl = "http://localhost:8080";
         try {
-            const response = await axios.put(${baseUrl}/pizzas/${params.id}, {
+            const response = await axios.put(`${baseUrl}/pizzas/${params.id}`, {
                 ...pizza,
                 size: parseInt(pizza.size),
                 price: parseFloat(pizza.price)

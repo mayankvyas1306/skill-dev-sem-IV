@@ -8,7 +8,7 @@ function PizzaList() {
     const readAllPizzas = async () => {
     try {
         const baseUrl = "http://localhost:8080";
-        const response = await axios.get(${baseUrl}/pizzas);
+        const response = await axios.get(`${baseUrl}/pizzas`);
         
         console.log("API Response:", response.data); // ✅ Debugging step
         
@@ -32,7 +32,7 @@ function PizzaList() {
         }
         try {
             const baseUrl = "http://localhost:8080";
-            const response = await axios.delete(${baseUrl}/pizzas/${id});
+            const response = await axios.delete(`${baseUrl}/pizzas/${id}`);
             alert(response.data.message);
             await readAllPizzas();
         } catch (error) {
@@ -70,9 +70,9 @@ function PizzaList() {
                                     <td>{pizza.price}</td>
                                     <td>{pizza.size}</td>
                                     <td>
-                                        <a href={/pizzas/view/${pizza.id}} className="btn btn-success">View</a>
+                                        <a href={`/pizzas/view/${pizza.id}`} className="btn btn-success">View</a>
                                         &nbsp;
-                                        <a href={/pizzas/edit/${pizza.id}} className="btn btn-warning">Edit</a>
+                                        <a href={`/pizzas/edit/${pizza.id}`} className="btn btn-warning">Edit</a>
                                         &nbsp;
                                         <button className="btn btn-danger" onClick={() => deletePizza(pizza.id)}>Delete</button>
                                     </td>

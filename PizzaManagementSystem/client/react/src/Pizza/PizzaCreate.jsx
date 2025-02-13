@@ -1,5 +1,8 @@
 import { useState } from "react";
 import PageHeader from "../header/PageHeader";
+// const {PageHeader} = require("../header/PageHeader");
+// import PageHeader from "../header/PageHeader";
+
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -17,7 +20,7 @@ function PizzaCreate() {
     const createPizza = async () => {
         const baseUrl = "http://localhost:8080";
         try {
-            const response = await axios.post(${baseUrl}/pizzas, {
+            const response = await axios.post(`${baseUrl}/pizzas`, {
                 ...pizza,
                 size: parseInt(pizza.size),
                 price: parseFloat(pizza.price)

@@ -10,7 +10,7 @@ function PizzaView() {
     const readById = async () => {
         const baseUrl = "http://localhost:8080";
         try {
-            const response = await axios.get(${baseUrl}/pizzas/${params.id});
+            const response = await axios.get(`${baseUrl}/pizzas/${params.id}`);
             const queriedPizza = response.data;
             setPizza(queriedPizza);
         } catch (error) {
